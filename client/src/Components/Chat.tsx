@@ -49,7 +49,7 @@ function Chat({ socket, username, room }) {
   }, [socket]);
 
   return (
-    <div>
+    <div className="chat-container">
       <div className="chat-header">
         <p>Live Chat</p>
       </div>
@@ -57,17 +57,17 @@ function Chat({ socket, username, room }) {
         {messageList.map((messageContent, index) => {
           return (
             <div
-              className="message"
-              id={username === messageContent.author ? 'you' : 'other'}
+              key={index}
+              className={`message ${
+                username === messageContent.author ? 'you' : 'other'
+              }`}
             >
-              <div>
-                <div className="message-content">
-                  <p>{messageContent.message}</p>
-                </div>
-                <div className="message-meta">
-                  <p id="time">{messageContent.time}</p>
-                  <p id="author">{messageContent.author}</p>
-                </div>
+              <div className="message-content">
+                <h4>{messageContent.message}</h4>
+              </div>
+              <div className="message-meta">
+                <p id="time">{messageContent.time}</p>
+                <p id="author">{messageContent.author}</p>
               </div>
             </div>
           );
