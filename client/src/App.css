@@ -1,7 +1,7 @@
 /** @format */
 body {
   font-family: 'Arial', sans-serif;
-  background: #e5ddd5; /* WhatsApp background */
+  background: #e5ddd5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,20 +10,20 @@ body {
 }
 
 .chat-container {
-  width: 450px; /* Fixed width */
-  height: 90vh; /* Optimized height */
+  width: 450px;
+  height: 90vh;
   margin: auto;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
-  background: #e5ddd5; /* WhatsApp background */
+  background: #e5ddd5;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Chat Header */
 .chat-header {
-  background: #075e54; /* WhatsApp green */
+  background: #075e54;
   color: white;
   padding: 15px;
   text-align: center;
@@ -40,31 +40,38 @@ body {
   flex-direction: column;
 }
 
+.message-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
 /* Individual Message */
 .message {
   display: flex;
   flex-direction: column;
-  max-width: 75%;
+  max-width: 55%;
   padding: 10px 15px;
-  margin: 8px 10px;
+  margin: 10px 10px;
   border-radius: 10px;
   word-wrap: break-word;
   font-size: 0.95rem;
 }
 
 /* Messages from You */
-.message.you {
-  background: #dcf8c6; /* WhatsApp light green */
+.you {
+  background: #dcf8c6;
   color: #000;
-  align-self: flex-end;
+  margin-left: auto;
   border-bottom-right-radius: 0;
 }
 
 /* Messages from Others */
-.message.other {
-  background: #ffffff; /* White for incoming messages */
+.other {
+  background: #ffffff;
   color: #000;
-  align-self: flex-start;
+  margin-right: auto;
   border-bottom-left-radius: 0;
 }
 
@@ -92,11 +99,11 @@ body {
 
 .message-meta #author {
   font-style: italic;
-  color: #075e54; /* Dark green for author */
+  color: #075e54;
 }
 
 .message.you .message-meta #author {
-  color: #128c7e; /* Slightly lighter green for 'you' */
+  color: #128c7e;
 }
 
 /* Chat Footer */
@@ -119,7 +126,7 @@ body {
 
 /* WhatsApp Green Send Button */
 .chat-footer .send-button {
-  background: #25d366; /* WhatsApp green */
+  background: #25d366;
   color: white;
   border: none;
   padding: 10px 35px;
@@ -149,7 +156,7 @@ body {
 
 /* Title */
 .join-title {
-  color: #075e54; /* WhatsApp green */
+  color: #075e54;
   margin-bottom: 15px;
   font-size: 1.5rem;
 }
@@ -167,7 +174,7 @@ body {
 }
 
 .join-input:focus {
-  border-color: #25d366; /* WhatsApp green */
+  border-color: #25d366;
 }
 
 /* Join Button */
@@ -175,7 +182,7 @@ body {
   width: 50%;
   padding: 10px;
   border: none;
-  background: #25d366; /* WhatsApp green */
+  background: #25d366;
   color: white;
   border-radius: 5px;
   font-size: 1.1rem;

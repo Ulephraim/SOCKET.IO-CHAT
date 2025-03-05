@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useEffect, useState } from 'react';
-
+import ScrollToBottom from 'react-scroll-to-bottom';
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState('');
   const [messageList, setMessageList] = useState<
@@ -54,24 +54,26 @@ function Chat({ socket, username, room }) {
         <p>Live Chat</p>
       </div>
       <div className="chat-body">
-        {messageList.map((messageContent, index) => {
-          return (
-            <div
-              key={index}
-              className={`message ${
-                username === messageContent.author ? 'you' : 'other'
-              }`}
-            >
-              <div className="message-content">
-                <h4>{messageContent.message}</h4>
+        <ScrollToBottom className="message-container">
+          {messageList.map((messageContent, index) => {
+            return (
+              <div
+                key={index}
+                className={`message ${
+                  username === messageContent.author ? 'you' : 'other'
+                }`}
+              >
+                <div className="message-content">
+                  <h4>{messageContent.message}</h4>
+                </div>
+                <div className="message-meta">
+                  <p id="time">{messageContent.time}</p>
+                  <p id="author">{messageContent.author}</p>
+                </div>
               </div>
-              <div className="message-meta">
-                <p id="time">{messageContent.time}</p>
-                <p id="author">{messageContent.author}</p>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}{' '}
+        </ScrollToBottom>
       </div>
       <div className="chat-footer">
         <input
