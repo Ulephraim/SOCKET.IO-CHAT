@@ -83,7 +83,9 @@ function Chat({ socket, username, room }) {
             e.key === 'Enter' && sendMessage();
           }}
         />
-        <button onClick={sendMessage}>Send</button>
+        <button className="send-button" onClick={sendMessage}>
+          Send
+        </button>
       </div>
     </div>
   );
